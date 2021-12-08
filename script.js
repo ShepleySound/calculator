@@ -119,6 +119,12 @@ decimalButton.addEventListener("click", function(e){
 
 
 clearButton.addEventListener("click", function(){
+    if (typingWindow.innerText === ""){
+        while (resultWindow.firstChild){
+            resultWindow.removeChild(resultWindow.firstChild)
+        }
+    }
+
     typingWindow.innerText = ""
     firstNumber = ""
     secondNumber = ""
