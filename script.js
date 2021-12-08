@@ -44,12 +44,14 @@ function operate(operator, x, y){
     }
 }
 
+// Ensures that the resultWindow does not overflow/grow.
 function limitResults(resultWindow){
     if (resultWindow.childElementCount >= 5){
         resultWindow.removeChild(resultWindow.firstChild)
     }
 }
 
+// Adds a result to the resultWindow
 function createResult(result, resultWindow){
     const newResult = document.createElement("div")
     newResult.innerText = result
@@ -58,8 +60,8 @@ function createResult(result, resultWindow){
     limitResults(resultWindow)
 }
 
-const typingWindow = document.querySelector(".typing-window")
-const resultWindow = document.querySelector(".result-window")
+const resultWindow = document.querySelector(".result-window") // Window that results get placed in.
+const typingWindow = document.querySelector(".typing-window") // Window that pressed buttons get entered into.
 const digits = document.querySelectorAll(".digit")
 const operators = document.querySelectorAll(".operator")
 const operatorCheckArray = ["+", "-", "×", "÷"]
@@ -68,7 +70,7 @@ const equalsButton = document.querySelector("#equals")
 const decimalButton = document.querySelector("#decimal")
 let firstNumber = ""
 let secondNumber = ""
-let currentOperator = ""
+let currentOperator = "" // Holds the sign of the operator, not the name/title.
 let isOperator = false
 
 digits.forEach(digit => digit.addEventListener("click", function(e){
@@ -117,14 +119,14 @@ decimalButton.addEventListener("click", function(e){
 })
 
 
-
+// Sets all necessary variables to empty/false. Mainly clears the typing window OR the result window.
 clearButton.addEventListener("click", function(){
+    // Clears the result window if pressed when nothing is present in the typing window.
     if (typingWindow.innerText === ""){
         while (resultWindow.firstChild){
             resultWindow.removeChild(resultWindow.firstChild)
         }
     }
-
     typingWindow.innerText = ""
     firstNumber = ""
     secondNumber = ""
@@ -132,6 +134,7 @@ clearButton.addEventListener("click", function(){
     isOperator = false
 })
 
+// Runs the operate function and clears up the secondNumber for future use.
 equalsButton.addEventListener("click", function(){
     if (!isOperator || secondNumber === ""){
         return
