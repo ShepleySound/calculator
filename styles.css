@@ -1,0 +1,185 @@
+html{
+    background-color: #121212;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+header{
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.1);
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+}
+
+.calc-container{
+    background-color: #121212;
+    border: 1px solid #515151;
+    border-radius: 4px;
+    width: 300px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.result-window{
+    height: 5em;
+    background-color: #121212;
+    margin: 0;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 5px;
+}
+
+
+.typing-window{
+    margin: 0;
+    background-color: #222222;
+    text-align: right;
+    font-size: 2em;
+    height: 1em;
+    padding: 5px;
+}
+
+
+.button-grid{
+    display: grid;
+    margin: 5px
+}
+
+button{
+    height: 40px;
+    margin: 2px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3B3B3B;
+    color: #FFFFFF;
+    font-size: 1.5em;
+}
+
+button:hover{
+    /* background-color: rgba(255, 255, 255, 0.14); */
+    background-color: #515151;
+}
+
+button:active{
+    /* background-color: rgba(255, 255, 255, 0.16); */
+    background-color: #248aaf;
+}
+
+.operator{
+    background-color: #c55528;
+    color: #000000
+}
+
+.operator:hover{
+    background-color: #dd612f;
+}
+
+.operator:active{
+    background-color: #e48c6b;
+}
+
+#equals:active{
+    background-color: #219c44;
+}
+
+#clear:active{
+    background-color: #9c213c;
+}
+
+#equals{
+    grid-row: 1;
+    grid-column-start: 3;
+    grid-column-end: 5;
+}
+
+#divide{
+    grid-row: 2;
+    grid-column: 4;
+}
+
+#multiply{
+    grid-row: 3;
+    grid-column: 4;
+}
+
+#subtract{
+    grid-row: 4;
+    grid-column: 4;
+}
+
+#add{
+    grid-row: 5;
+    grid-column: 4;
+}
+
+#x7{
+    grid-row: 2;
+    grid-column: 1;
+}
+
+#x8{
+    grid-row: 2;
+    grid-column: 2;
+}
+
+#x9{
+    grid-row: 2;
+    grid-column: 3;
+}
+
+#x4{
+    grid-row: 3;
+    grid-column: 1;
+}
+
+#x5{
+    grid-row: 3;
+    grid-column: 2;
+}
+
+#x6{
+    grid-row: 3;
+    grid-column: 3;
+}
+
+#x1{
+    grid-row: 4;
+    grid-column: 1;
+}
+
+#x2{
+    grid-row: 4;
+    grid-column: 2;
+}
+
+#x3{
+    grid-row: 4;
+    grid-column: 3;
+}
+
+#x0{
+    grid-row: 5;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+#decimal{
+    grid-row: 5;
+    grid-column: 3;
+}
+
+#clear{
+    grid-row: 1;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
